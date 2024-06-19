@@ -10,7 +10,7 @@ const defaultData = {
     published: true
 }
 
-const listTags = ['javascript', 'react', 'css']
+const listTags = ['js', 'react', 'css', 'html', 'node', 'vue', 'laravel', 'php']
 
 export default function () {
     const [posts, setPosts] = useState([]);
@@ -88,7 +88,7 @@ export default function () {
                 </div>
                 <div className='form-control'>
                     <h3>tags:</h3>
-                    <div>
+                    <div className='tags'>
                         {listTags.map((tag, index) => (
                             <label key={`tag${index}`}>
                                 <input
@@ -124,7 +124,9 @@ export default function () {
                                 ))}
                             </ul>
                             </div>
+                            <div className='delete'>
                             <button onClick={() => remuveItem(index)}><FaRegTrashAlt /></button>
+                            </div>
                         </div>
                     ))
                     }

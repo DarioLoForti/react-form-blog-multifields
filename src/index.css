@@ -46,6 +46,7 @@
     background-color: #007bff;
     color: white;
     cursor: pointer;
+    margin-top: 20px;
   }
 
   #articleForm textarea {
@@ -109,4 +110,17 @@
     color: white;
     text-align: center;
   }
-  
+  .delete{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  svg{
+    cursor: pointer;
+  }
+  .tags{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+ 
