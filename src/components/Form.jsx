@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaRegTrashAlt } from "react-icons/fa";
 
 const defaultData = {
@@ -16,6 +16,12 @@ export default function () {
     const [posts, setPosts] = useState([]);
     const [error, setError] = useState('');
     const [data, setData] = useState(defaultData);
+
+    useEffect(() => {
+        if (data.published) {
+            alert('Post published!');
+        }
+    }, [data.published]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
