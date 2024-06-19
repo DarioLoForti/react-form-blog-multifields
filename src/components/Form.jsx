@@ -13,14 +13,14 @@ const defaultData = {
 const listTags = ['javascript', 'react', 'css']
 
 export default function () {
-    const [content, setContent] = useState([]);
+    const [posts, setPosts] = useState([]);
     const [error, setError] = useState('');
     const [data, setData] = useState(defaultData);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if(data.title.trim() && data.description.trim() && data.image.trim() && data.category.trim()) {
-            setContent(content => ([...content, data]));
+            setPosts(posts => ([...posts, data]));
             setData(defaultData);
             setError('');
         } else {
@@ -29,7 +29,7 @@ export default function () {
     }
 
     const remuveItem = (index) => {
-        setContent(content => content.filter((_, i) => i !== index));
+        setPosts(posts => posts.filter((_, i) => i !== index));
     }
 
     const changeData = (key, newValue) => {
@@ -46,7 +46,7 @@ export default function () {
     }
 
     console.log(data);
-    console.log(content);
+    console.log(posts);
     return (
         <>
         <h1>My blog</h1>
@@ -106,12 +106,12 @@ export default function () {
             </form>
             {error && <div className="error">{error}</div>}
 
-            {content.length > 0 && <h2 className='list'>Posts:</h2>}
+            {posts.length > 0 && <h2 className='list'>Posts:</h2>}
 
             <div className="cards">
                 <div className="card">
-                    {content.map(({title, description, image, category, tags}, index) => (
-                        <div key={`content${index}`} className="card-item">
+                    {posts.map(({title, description, image, category, tags}, index) => (
+                        <div key={`post${index}`} className="card-item">
                             <img src={image} alt={title} />
                             <h3>{title}</h3>
                             <p>{description}</p>
