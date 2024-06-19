@@ -7,7 +7,7 @@ const defaultData = {
     image: '',
     category: '',
     tags: [],
-    published: true
+    published: false
 }
 
 const listTags = ['js', 'react', 'css', 'html', 'node', 'vue', 'laravel', 'php']
@@ -99,6 +99,16 @@ export default function () {
                                 {tag}
                             </label>
                         ))}
+                    </div>
+                </div>
+                <div className='form-control'>
+                    <div className='published'>
+                    <label> Published </label>
+                    <input
+                        type="checkbox"
+                        checked={data.published}
+                        onChange={(e) => changeData('published', e.target.checked)}
+                    />
                     </div>
                 </div>
                 
