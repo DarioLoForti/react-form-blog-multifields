@@ -1,3 +1,4 @@
+/* styles.css */
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode {
+  background-color: #383737;
+  color: white;
 }
 
 form {
@@ -23,7 +35,6 @@ input {
 }
 
 label {
-  color: white;
   font-size: 20px;
 }
 
@@ -68,13 +79,12 @@ ul {
 }
 
 li {
-  color: white;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
 .list {
-  color: white;
+  font-size: 20px;
 }
 
 .error {
@@ -92,7 +102,6 @@ li {
 .card {
   width: 300px;
   background-color: #ffffff00;
-  color: black;
   padding: 10px;
   margin-top: 20px;
   border-radius: 4px;
@@ -106,12 +115,10 @@ img {
 
 h3, p {
   margin-top: 10px;
-  color: white;
   text-align: center;
 }
 
 h1 {
-  color: white;
   text-align: center;
 }
 
